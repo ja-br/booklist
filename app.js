@@ -54,9 +54,11 @@ document.querySelector('#book-form').addEventListener('submit',(e)=>{
 
     const ui = new UI()
 
+    // Validation
     if(title === '' || author === '' || isbn === ''){
         ui.showAlert('Please fill in all fields', 'error')
     } else {
+        ui.showAlert('Book Added!', 'success')
         ui.addBookToTable(book)
         ui.clearFields()
     }
