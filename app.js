@@ -20,6 +20,13 @@ UI.prototype.addBookToTable = function(book){
     list.appendChild(row)
 }
 
+UI.prototype.clearFields = function(){
+    
+    document.querySelector('#title').value = ''
+    document.querySelector('#author').value = ''
+    document.querySelector('#isbn').value = ''
+}
+
 document.querySelector('#book-form').addEventListener('submit',(e)=>{
     const title = document.querySelector('#title').value,
         author = document.querySelector('#author').value,
@@ -31,6 +38,8 @@ document.querySelector('#book-form').addEventListener('submit',(e)=>{
     const ui = new UI()
 
     ui.addBookToTable(book)
+    ui.clearFields()
+
     e.preventDefault()
 })
 
